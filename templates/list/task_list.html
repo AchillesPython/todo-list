@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Todo List - Home{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Todo List</h1>
+    <a href="{% url 'list:task_create' %}" class="btn btn-primary mb-3">Add New Task</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.content }}</td>
+                    <td>{{ task.created_at }}</td>
+                    <td>{{ task.deadline }}</td>
+                    <td>
+                        {% if task.is_done %}
+                            <span class="badge bg-success">Completed</span>
+                        {% else %}
+                            <span class="badge bg-warning">Pending</span>
+                        {% endif %}
+                    </td>
+                    <td>
+    <a href="{% url 'list:task_update' task.id %}" class="btn btn-info btn-sm">Edit</a>
+    <a href="{% url 'list:task_delete' task.id %}" class="btn btn-danger btn-sm">Delete</a>
+
+    {% if task.is_done %}
+        <form action="{% url 'list:task_toggle' task.id %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-warning btn-sm">Undo</button>
+        </form>
+    {% else %}
+        <form action="{% url 'list:task_toggle' task.id %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success btn-sm">Complete</button>
+        </form>
+    {% endif %}
+</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
