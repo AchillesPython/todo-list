@@ -4,12 +4,12 @@
 
 ## ✅ Key Features:
 
- 📋 View a task list with filtering by status (in progress, completed, overdue).
- 📝 Add, edit, and delete tasks.
- ✔️ Mark tasks as completed or move them back to "in progress" status.
- 🏷️ Tagging system for organizing tasks.
- 🔔 Deadline reminders.
- 📅 Calendar for planning and viewing deadlines.
+*  📋 View a task list with filtering by status (in progress, completed, overdue).
+*  📝 Add, edit, and delete tasks.
+*  ✔️ Mark tasks as completed or move them back to "in progress" status.
+*  🏷️ Tagging system for organizing tasks.
+*  🔔 Deadline reminders.
+*  📅 Calendar for planning and viewing deadlines.
 
 
 ## ⚙️ Loading Initial Data (Optional)
