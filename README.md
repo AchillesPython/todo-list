@@ -17,3 +17,4 @@
 ```bash 
 python manage.py loaddata tasks_tags_fixture.json
 ```
+![Todo List.png](list/pages/Todo%20List.png)
