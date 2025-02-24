@@ -17,4 +17,10 @@
 ```bash 
 python manage.py loaddata tasks_tags_fixture.json
 ```
+
+## DEMO
 ![Todo List.png](list/pages/Todo%20List.png)
+![Tags List.png](list/pages/Tags%20List.png)
+![delete.png](list/pages/delete.png)
+![Create New Tag.png](list/pages/Create%20New%20Tag.png)
+![Create.png](list/pages/Create.png)
